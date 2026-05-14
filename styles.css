@@ -804,11 +804,18 @@ img { max-width: 100%; display: block; }
   );
 }
 
-.nl-hero__content {
+.nl-hero__container {
   position: relative;
   z-index: 1;
-  max-width: 580px;
-  padding: var(--pad-y) var(--pad-x);
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+.nl-hero__content {
+  max-width: 560px;
+  padding: var(--pad-y) 0;
 }
 
 .nl-hero .section-label { color: var(--gold); letter-spacing: 0.2em; }
