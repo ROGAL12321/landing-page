@@ -27,18 +27,18 @@ const btnReject     = document.getElementById('cookieReject');
 const COOKIE_KEY    = 'cookieConsent';
 
 function initCookieBanner() {
-  if (!localStorage.getItem(COOKIE_KEY)) {
+  if (banner && !localStorage.getItem(COOKIE_KEY)) {
     setTimeout(() => banner.classList.add('show'), 900);
   }
 }
 
 function dismissBanner(value) {
   localStorage.setItem(COOKIE_KEY, value);
-  banner.classList.remove('show');
+  if (banner) banner.classList.remove('show');
 }
 
-btnAccept.addEventListener('click', () => dismissBanner('accepted'));
-btnReject.addEventListener('click', () => dismissBanner('rejected'));
+if (btnAccept) btnAccept.addEventListener('click', () => dismissBanner('accepted'));
+if (btnReject) btnReject.addEventListener('click', () => dismissBanner('rejected'));
 
 /* =========================================
    CONTACT FORM  (Formspree AJAX + validation)
